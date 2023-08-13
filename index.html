@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- PokeStat Guide HTML Skeleton-->
+    <!-- Metadata Basics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title Card -->
+    <title>Antares PokeStat Guide</title>
+
+    <!-- Styles and Scripts -->
+    <link rel="icon" href="static/icons/favicon.ico">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- Header Intro Stage -->
+    <header class="header-container fancy-font">
+        <h1><img src="static/icons/pokeball.png" alt="Pokeball" width="30" height="30"> Welcome to the PokeStats Guide!</h1>
+    </header>
+      
+   <!-- Main Course -->
+   <div class="section-container">
+    <main class="container">
+            <!-- Pokemon Search Bar -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" id="search-bar" placeholder="Search for a Pokemon...">
+                <div class="autocomplete-dropdown" id="autocomplete-list"></div>
+            </div>
+    
+            <!-- Pokemon Detail Section -->
+            <section id="pokemon-details" class="mt-2">
+                <div class="container">
+                    <div class="row">
+                        <!-- Pokemon Sprite Chapter -->
+                        <div class="col-md-6 pokemon-sprite-container">
+                            <img id="pokemon-sprite" src="">
+                            <h5 id="pokemon-name" class="card-title fancy-font"></h5>
+                        </div>
+                        <!-- Radar Chart Chapter -->
+                        <div class="col-md-6 chart-container">
+                            <canvas id="stat-chart"></canvas>
+                        </div>
+                    </div>
+                    <!-- Pokemon Extra Stats and Types Chapter -->
+                    <div class="row">
+                        <div class="col-md-4 stats-container">
+                            <h2 class="fancy-font">Body Stats</h2>
+                            <ul>
+                                <li><strong>Height:</strong> <span id="pokemon-height"></span></li>
+                                <li><strong>Weight:</strong> <span id="pokemon-weight"></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 type-container">
+                            <h2 class="fancy-font">Types</h2>
+                            <ul id="pokemon-types"></ul>
+                        </div>
+                        <div class="col-md-4 abilities-container">
+                            <h2 class="fancy-font">Abilities</h2>
+                            <ul id="dynamic-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>    
+     
+    <div class="section-container">
+        <!-- Dual Pokemon Comparison Section -->
+        <section id="pokemon-comparison" class="mt-4 text-center">
+          <h2>Pokemon Stat Comparison</h2>
+          <div class="comparison-container d-flex justify-content-center">
+            <div class="dropdown-container">
+              <select id="pokemon-dropdown-1"></select>
+              <select id="pokemon-dropdown-2"></select>
+              <div class="greatball-button-container">
+                <button class="greatball-button" id="compare-button"></button>
+              </div>
+            </div>
+          </div>
+          <p id="comparison-result" class="mt-2"></p>
+        </section>
+      </div>
+
+        <!-- Pokemon Comparison Charts Chapter -->
+        <div id="pokemon-barchart" class="mt-4">
+            <div class="d-flex">
+                <div class="chart-container">
+                    <img id="pokemon-image1" src="">
+                    <div id="bar-chart1">
+                        <canvas id="canvas-bar-chart1"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <img id="pokemon-image2" src="">
+                    <div id="bar-chart2">
+                        <canvas id="canvas-bar-chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p id="bar-result" class="mt-2"></p>
+        </div>
+    
+  <!-- Comparison Reset -->
+  <div class="reset-button-container">
+    <button class="pokeball-button" id="reset-button" title="Reset Comparison?"></button>
+</div> 
+
+    <!-- Footer Credits -->
+    <footer class="footer-container">
+        <div class="copyright-section">
+          <a href="https://github.com/LM95A1" target="_blank" class="copyright-link">
+            <p>&copy; 2023 LM95A1. Don't know what I'm doing yet. I question if I ever will.</p>
+            <img src="static/icons/dragon.png" alt="Dragon icon">
+          </a>
+        </div>
+      </footer>
+      
+
+<!-- JavaScript Functionality and Interactivity Chapter -->
+<script src="static\js\script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

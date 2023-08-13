@@ -1,0 +1,368 @@
+/* PokeStat Guide Stylesheet */
+/* Doll 'er up for me, yeah? */
+
+/* General Styles: These styles apply to the whole page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #B9121B;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s;
+}
+
+/* Header Styles: These styles apply to the main header of the page */
+.header-container {
+    background-image: linear-gradient(to right, #e74c3c, #e84118);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    border-bottom: 3px solid #333;
+    padding: 25px;
+    color: #fff;
+}
+.header-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+.header-container img {
+    margin-right: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+.header-container img:hover {
+    transform: rotate(360deg);
+}
+
+/* Panel Styles: These styles handle the main panels for listing and details */
+#pokemon-list-panel {
+    float: left;
+    width: 30%;
+    height: 100vh;
+    overflow: auto;
+    background-color: #E5E5E5;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+#pokemon-detail-panel {
+    float: right;
+    width: 70%;
+    height: 100vh;
+    background-color: #4A4A4A;
+    padding: 20px;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Clear float: This is a utility style to clear the float after the panels */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Pokemon Name & Image Styles */
+.pokemon-name {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+#pokemon-image {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Button and Hover Effect Styles */
+button:hover {
+    background-color: #777777;
+    transform: scale(1.1);
+}
+.pokemon-list-item {
+    transition: all 0.3s ease-in-out;
+}
+.pokemon-list-item:hover {
+    transform: scale(1.05);
+    background-color: #B9121B;
+    color: #FFFFFF;
+}
+
+/* Chart Container Style */
+.chart-container {
+    text-align: center;
+    width: 100%;
+}
+.chart-container img {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Group Styles: Used for search and selection */
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 100px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+.autocomplete-option {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.autocomplete-option:hover {
+    background-color: #f4f4f4;
+}
+
+/* Section Container Style: For general content layout */
+.section-container {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+/* Fancy Font Style */
+.fancy-font {
+    text-align: center; /* Center the text */
+    font-family: 'Arial Black', 'Arial Bold', sans-serif; /* Use a bold, readable font */
+    font-weight: bold; /* Make the font thicker */
+    text-transform: uppercase; /* Use uppercase letters */
+}
+
+/* Reset and Compare Buttons Styles */
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pokeball-button {
+    position: relative;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    background-image: url('../icons/pokeball.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .pokeball-button:hover::after {
+    content: 'Reset Comparison?';
+    position: absolute;
+    bottom: -30px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0.9;
+  }
+
+
+  .greatball-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* This helps it take the available space */
+}
+
+  
+  .greatball-button {
+    position: relative;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    background-image: url('../icons/greatball.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .greatball-button:hover::after {
+    content: 'Compare!';
+    position: absolute;
+    bottom: -30px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0.9;
+  }
+
+/* Comparison and Dropdown Container Styles */
+.comparison-container {
+    justify-content: center;
+    width: 100%;
+}
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d-flex {
+    display: flex;
+}
+
+/* Select Styles: Used for dropdown selection */
+select {
+    width: 150px; /* Adjust as needed */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    transition: border-color 0.3s;
+}
+select:hover, select:focus {
+    align-items: center;
+    border-color: #B9121B;
+    outline: none;
+}
+
+select:focus {
+    align-items: center;
+    outline: none;
+    border-color: #B9121B;
+}
+
+/* Styles for Pokemon sprite container */
+.pokemon-sprite-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for Pokemon sprite image */
+.pokemon-sprite-container img {
+    width: 400px;
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effect for Pokemon sprite */
+.pokemon-sprite-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Common style for stats and abilities containers */
+.stats-container,
+.abilities-container {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for type container */
+.type-container {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for Pokemon details header */
+#pokemon-details h2 {
+    font-size: 1.2em;
+    color: #B9121B; /* Matching color with theme */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.footer-container {
+    background-image: linear-gradient(to right, #e84118, #e74c3c);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    border-top: 3px solid #333;
+    padding: 25px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .copyright-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    letter-spacing: 2px;
+  }
+  
+  .copyright-section img {
+    margin-left: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .copyright-section img:hover {
+    transform: rotate(360deg);
+  }
+  
+  .additional-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+  }
+  
+  .additional-links a:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+  }
+  .copyright-link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+  }
+  
+  .copyright-link:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+  }
+  .copyright-link img {
+    width: 40px; /* Adjust this value to your desired size */
+    height: auto; /* Keeps the aspect ratio */
+  }
+  
